@@ -2,6 +2,11 @@
 {
     public class TaskModel
     {
+        public TaskModel()
+        {
+            CreatedDate = DateTime.Now;
+        }
+
         public int TaskId { get; set; }
 
         public string Name { get; set; }

@@ -9,5 +9,9 @@
         public TimeSpan Duration { get; set; }
 
         public TimeSpan StartFrom { get; set; }
+
+        public string MediaPath { get; set; }
+
+        public override string ToString() => Title;
     }
 }

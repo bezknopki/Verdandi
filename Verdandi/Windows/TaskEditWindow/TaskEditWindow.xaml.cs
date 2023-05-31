@@ -22,8 +22,5 @@ namespace Verdandi.Windows.TaskEditWindow
         {
             InitializeComponent();
         }
-
-        private static ResourceManager resourceMan;
-        public static ResourceManager ResourceManager => resourceMan ??= new ResourceManager("Verdandi.Properties.Resources", typeof(TaskEditWindow).Assembly);
     }
 }

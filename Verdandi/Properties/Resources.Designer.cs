@@ -61,6 +61,15 @@ namespace Verdandi.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Создать задачу.
+        /// </summary>
+        public static string BUTTON_ACCEPT {
+            get {
+                return ResourceManager.GetString("BUTTON_ACCEPT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Дата создания.
         /// </summary>
         public static string CREATED_DATE {
@@ -97,11 +106,29 @@ namespace Verdandi.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ч.
+        /// </summary>
+        public static string HOURS {
+            get {
+                return ResourceManager.GetString("HOURS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Видео, приложенное к задаче.
         /// </summary>
         public static string MEDIA {
             get {
                 return ResourceManager.GetString("MEDIA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to М.
+        /// </summary>
+        public static string MINUTES {
+            get {
+                return ResourceManager.GetString("MINUTES", resourceCulture);
             }
         }
         

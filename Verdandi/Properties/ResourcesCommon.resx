@@ -120,4 +120,7 @@
   <data name="APP__NAME" xml:space="preserve">
     <value>Verdandi</value>
   </data>
+  <data name="EDIT_WINDOW_TITLE" xml:space="preserve">
+    <value>Редактирование задачи</value>
+  </data>
 </root>
