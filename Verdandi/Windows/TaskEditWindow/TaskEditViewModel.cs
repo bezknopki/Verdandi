@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Verdandi.Windows.NewTaskWindow
+namespace Verdandi.Windows.TaskEditWindow
 {
-    internal class NewTaskViewModel
+    internal class TaskEditViewModel
     {
     }
 }

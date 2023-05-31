@@ -1,9 +1,4 @@
-﻿using DataAccess.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DataAccess.Models
+﻿namespace DAL.Models
 {
     public class TaskModel
     {
@@ -15,12 +10,16 @@ namespace DataAccess.Models
 
         public TimeSpan ExpectedCompletionTime { get; set; }
 
+        public TimeSpan FactCompletionTime { get; set; }
+
         public DateTime CreatedDate { get; }
 
         public DateTime DateStart { get; set; }
 
-        public string VideoPath { get; set; }
+        public int MediaId { get; set; }
 
         public MediaModel Media { get; set; }
+
+        public bool OpenVideoOnTaskStart { get; set; }
     }
 }
