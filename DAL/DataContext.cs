@@ -1,7 +1,7 @@
 ﻿using DAL.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace DataAccess
+namespace DAL
 {
     public class DataContext : DbContext
     {

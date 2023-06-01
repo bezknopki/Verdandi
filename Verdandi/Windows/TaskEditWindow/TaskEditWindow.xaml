@@ -48,5 +48,7 @@
         <syncfusion:SfTimePicker HorizontalAlignment="Left" Margin="140,25,0,0" Grid.RowSpan="2" Grid.Row="5" VerticalAlignment="Top" Width="120"
                                  Value="{Binding Time}"/>
         <Button Content="{x:Static resources:Resources.BUTTON_ACCEPT}" HorizontalAlignment="Left" Margin="300,0,0,0" Grid.Row="6" VerticalAlignment="Center"/>
+        <Button Content="{x:Static resources:Resources.BUTTON_SCAN}" Command="{Binding ScanMedia, Mode=OneWay}"
+                HorizontalAlignment="Left" Margin="20,25,0,0" Grid.Row="4" VerticalAlignment="Top"/>
     </Grid>
 </Window>

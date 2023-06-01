@@ -120,6 +120,9 @@
   <data name="BUTTON_ACCEPT" xml:space="preserve">
     <value>Создать задачу</value>
   </data>
+  <data name="BUTTON_SCAN" xml:space="preserve">
+    <value>Добавить видео</value>
+  </data>
   <data name="CREATED_DATE" xml:space="preserve">
     <value>Дата создания</value>
   </data>

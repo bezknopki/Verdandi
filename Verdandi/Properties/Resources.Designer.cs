@@ -70,6 +70,15 @@ namespace Verdandi.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Добавить видео.
+        /// </summary>
+        public static string BUTTON_SCAN {
+            get {
+                return ResourceManager.GetString("BUTTON_SCAN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Дата создания.
         /// </summary>
         public static string CREATED_DATE {
