@@ -1,6 +1,6 @@
 ﻿namespace DAL.Models
 {
-    public class MediaModel
+    public class Media
     {
         public int MediaId { get; set; }
 

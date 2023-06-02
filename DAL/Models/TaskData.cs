@@ -1,17 +1,19 @@
 ﻿namespace DAL.Models
 {
-    public class TaskModel
+    public class TaskData
     {
-        public TaskModel()
+        public TaskData()
         {
             CreatedDate = DateTime.Now;
         }
 
-        public int TaskId { get; set; }
+        public int TaskDataId { get; set; }
 
         public string Name { get; set; }
 
         public string Description { get; set; }
+
+        public TaskStatus Status { get; set; }
 
         public TimeSpan ExpectedCompletionTime { get; set; }
 
@@ -23,8 +25,10 @@
 
         public int MediaId { get; set; }
 
-        public MediaModel Media { get; set; }
+        public Media Media { get; set; }
 
         public bool OpenVideoOnTaskStart { get; set; }
+
+        public override string ToString() => Name;
     }
 }

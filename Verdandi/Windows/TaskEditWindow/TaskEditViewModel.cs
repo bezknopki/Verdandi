@@ -10,36 +10,35 @@ using Verdandi.Commands;
 using Microsoft.Win32;
 using System.IO;
 using BLL;
+using Verdandi.Controls;
 
 namespace Verdandi.Windows.TaskEditWindow
 {
-    public class TaskEditViewModel : INotifyPropertyChanged
+    public class TaskEditViewModel : ViewModelBase
     {
-        public TaskModel TaskModel { get; }
+        public TaskData TaskModel { get; }
 
         public ICommand ScanMedia => new RelayCommand(_ => StartScanMedia());
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public TaskEditViewModel()
         {
-            static List<MediaModel> getMedia()
+            static List<Media> getMedia()
             {
                 using var db = new DataContext();
                 return db.Media.ToList();
             }
 
-            TaskModel = new TaskModel();
+            TaskModel = new TaskData();
             MediaList = getMedia();
         }
 
-        public TaskEditViewModel(TaskModel model = null, List<MediaModel> media = null)
+        public TaskEditViewModel(TaskData model = null, List<Media> media = null)
         {
             TaskModel = model;
             MediaList = media;
         }
 
-        public List<MediaModel> MediaList { get; }
+        public List<Media> MediaList { get; }
 
         public string Name
         {
@@ -61,26 +60,12 @@ namespace Verdandi.Windows.TaskEditWindow
             }
         }
 
-        public int Hours
+        public TimeSpan ExpectedCompletionTime
         {
-            get { return TaskModel.ExpectedCompletionTime.Hours; }
+            get { return TaskModel.ExpectedCompletionTime; }
             set
             {
-                TaskModel.ExpectedCompletionTime =
-                    TimeSpan.FromHours(value)
-                    + TimeSpan.FromMinutes(TaskModel.ExpectedCompletionTime.Minutes);
-                RaisePropertyChanged();
-            }
-        }
-
-        public int Minutes
-        {
-            get { return TaskModel.ExpectedCompletionTime.Minutes; }
-            set
-            {
-                TaskModel.ExpectedCompletionTime =
-                    TimeSpan.FromHours(TaskModel.ExpectedCompletionTime.Hours)
-                    + TimeSpan.FromMinutes(value);
+                TaskModel.ExpectedCompletionTime = value;
                 RaisePropertyChanged();
             }
         }
@@ -118,7 +103,7 @@ namespace Verdandi.Windows.TaskEditWindow
             {
                 foreach (string fileName in ofd.FileNames)
                 {
-                    MediaModel media = new()
+                    Media media = new()
                     {
                         MediaPath = fileName,
                         Title = Path.GetFileName(fileName)
@@ -126,13 +111,6 @@ namespace Verdandi.Windows.TaskEditWindow
                     DbWorker.AddMedia(media);
                 }
             }
-
-
-        }
-
-        protected void RaisePropertyChanged([CallerMemberName] string name = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

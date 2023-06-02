@@ -5,9 +5,9 @@ namespace DAL
 {
     public class DataContext : DbContext
     {
-        public DbSet<TaskModel> Tasks { get; set; }
+        public DbSet<TaskData> Tasks { get; set; }
 
-        public DbSet<MediaModel> Media { get; set; }
+        public DbSet<Media> Media { get; set; }
 
         public DataContext()
         {
