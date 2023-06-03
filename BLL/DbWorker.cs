@@ -1,5 +1,5 @@
 ﻿using DAL;
-using DAL.Models;
+using DAL.Entities;
 
 namespace BLL
 {
@@ -15,6 +15,12 @@ namespace BLL
         {
             using var dbContext = new DataContext();
             dbContext.Media.AddRange(media);
+        }
+
+        public static void RemoveTask(TaskData task)
+        {
+            using var dbContext = new DataContext();
+            dbContext.Tasks.Remove(task);
         }
     }
 }

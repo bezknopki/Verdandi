@@ -18,6 +18,11 @@
         </Grid.ColumnDefinitions>
         <ListView Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#FFDFDFDF"
                   ItemsSource="{Binding Tasks}" SelectedItem="{Binding SelectedTask}">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Remove" Command="{Binding RemoveTask}" />
+                </ContextMenu>
+            </ListView.ContextMenu>
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
